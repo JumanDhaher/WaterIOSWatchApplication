@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct WaterApplicationApp: App {
+struct HydrateApp: App {
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @AppStorage("liters") var litersData: Double = 0.0
+    @AppStorage("cups") var cupsData: Double = 0.0
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashViews(isOnboarding: $isOnboarding)
         }
     }
 }
